@@ -1,0 +1,19 @@
+{
+  "props": {
+    "author": "Merkus",
+    "description": "Создание сайта",
+    "singleton": true
+  },
+  "components": {
+    "ini": {
+      "type": "script\\storage\\IniStorage",
+      "x": 144,
+      "y": 304,
+      "props": {
+        "path": "config.ini",
+        "autoSave": "1",
+        "multiLineValues": "1"
+      }
+    }
+  }
+}

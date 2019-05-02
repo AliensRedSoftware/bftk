@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<behaviours>
+  <target id="firstpage">
+    <behaviour allowedSymbols="zaqxswcdevfrbgtnhymjukilopяфйчыцсвумакипетрньогблшюдщжзэхъ_" matchCase="" maxLength="256" type="behaviour\custom\KeyInputRuleBehaviour"/>
+  </target>
+  <target id="libphp">
+    <behaviour allowedSymbols="zaqxswcdevfrbgtnhymjukilopяфйчыцсвумакипетрньогблшюдщжзэхъ_" matchCase="" maxLength="64" type="behaviour\custom\KeyInputRuleBehaviour"/>
+  </target>
+</behaviours>
