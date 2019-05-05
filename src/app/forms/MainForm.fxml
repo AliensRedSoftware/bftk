@@ -53,7 +53,7 @@
           </font>
         </Button>
         <Data cursor="DEFAULT" enabled="1" graphic=".data/img/add.png" id="data-newtheme" tooltipText="Создать новую тему" visible="1"/>
-        <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="deletetheme" layoutX="7" layoutY="104" prefHeight="32" prefWidth="50" styleClass="button " text="Кнопка" textAlignment="CENTER" underline="false" wrapText="false">
+        <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="deletetheme" layoutX="8" layoutY="104" prefHeight="32" prefWidth="50" styleClass="button " text="Кнопка" textAlignment="CENTER" underline="false" wrapText="false">
           <font>
             <Font name="System Regular" size="13"/>
           </font>

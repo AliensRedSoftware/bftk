@@ -28,9 +28,9 @@ class MainForm extends AbstractForm {
      * @event show 
      */
     function doShow(UXWindowEvent $e = null) {
-        $this->themes->selected = $this->ini->get('theme', 'options');
         $this->getThemes($this->themes); 
         $this->loadoption($this);
+        $this->themes->selected = $this->ini->get('theme', 'options');
     }
 
     /**

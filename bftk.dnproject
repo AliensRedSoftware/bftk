@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project author="merkus" authorOS="Linux" createdAt="1554378404346" ideName="DevelNext" ideVersion="16.7.0" ideVersionHash="2017103112" name="bftk" packageName="app" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1555542234358">
+<project author="merkus" authorOS="Linux" createdAt="1554378404346" ideName="DevelNext" ideVersion="16.7.0" ideVersionHash="2017103112" name="bftk" packageName="app" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1557027250880">
   <tree>
     <expanded>
     <path src=""/>
-      <path src="/src"/>
-      <path src="/src/.theme"/>
-      <path src="/src/app"/>
-      <path src="/src/app/forms"/>
-      <path src="/src/app/modules"/>
     </expanded>
   </tree>
   <openedFiles>
