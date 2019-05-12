@@ -193,6 +193,7 @@ class packagemanager extends AbstractForm {
         $categoria = $this->categoria->selected;
         $name = $this->listView->selectedItem;
         $ver = $this->version->selected;
+        $previwselected = $this->listView->selectedIndex;
         $this->listView->selectedIndex = -1;
         $url = "https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/zip/$categoria/$name/$ver/";
         if ($e->sender->tooltipText == 'Удалить') {
@@ -206,7 +207,7 @@ class packagemanager extends AbstractForm {
                     fs::delete($pathjs . $value);
                 }
                 $this->toast('Успешно удалилось');
-                $this->listView->selectedIndex = 0;
+                $this->listView->selectedIndex = $previwselected;
             }
         } else {
             $this->showPreloader('Скачивается файл...');
@@ -218,17 +219,17 @@ class packagemanager extends AbstractForm {
             foreach ($this->jslist->items->toArray() as $value) {
                 array_push($arrayjs, $url . 'js/' . $value);
             }
-            $this->downloader->on('successAll', function () {
+            $this->downloader->on('successAll', function () use ($previwselected) {
                 $this->toast('Успешно устанавилась!');
-                $this->listView->selectedIndex = 0;
+                $this->listView->selectedIndex = $previwselected;
                 $this->hidePreloader();
             });
             $this->downloader->urls = $arraycss;
             $this->downloader->destDirectory = "./$theme/$css/";
             $this->downloader->start();
-            $this->downloaderAlt->on('successAll', function () {
+            $this->downloaderAlt->on('successAll', function () use ($previwselected) {
                 $this->toast('Успешно устанавилась!');
-                $this->listView->selectedIndex = 0;
+                $this->listView->selectedIndex = $previwselected;
                 $this->hidePreloader();
             });
             $this->downloaderAlt->urls = $arrayjs;

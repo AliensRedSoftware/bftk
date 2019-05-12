@@ -31,8 +31,8 @@
     },
     "downloader": {
       "type": "bundle\\http\\HttpDownloader",
-      "x": 208.0,
-      "y": 208.0,
+      "x": 208,
+      "y": 208,
       "props": {
         "threadCount": 256
       }

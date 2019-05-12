@@ -58,25 +58,25 @@ class storeModule extends AbstractModule {
         $accesscss = 0;
         $accessjs = 0;
         foreach ($csscurrent as $csscurrent) {
-            $css = explode("/", $csscurrent);
-            foreach ($csslist as $csslist) {
-                $cssselected = explode("/", $csscurrent);
-                if ($cssselected[count($cssselected) - 1] == $css[count($css) - 1]) {
+            $css = explode('/', $csscurrent);
+            foreach ($csslist as $cssvalue) {
+                if ($css[count($css) - 1] == $cssvalue) {
                     $accesscss++;
                 }
             }
         }
         foreach ($jscurrent as $jscurrent) {
             $js = explode("/", $jscurrent);
-            foreach ($jslist as $jslist) {
-                $jsselected = explode("/", $jscurrent);
-                if ($jsselected[count($jsselected) - 1] == $js[count($js) - 1]) {
+            foreach ($jslist as $jsvalue) {
+                if ($js[count($js) - 1] == $jsvalue) {
                     $accessjs++;
                 }
             }
         }
         if (count($csslist) == $accesscss && count($jslist) == $accessjs) {
-            return 1;
+            return true;
+        } else {
+            return false;
         }
     }
 }
