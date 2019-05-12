@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.paint.*?><?import javafx.scene.web.*?><?import javafx.geometry.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480" prefWidth="640" styleClass="">
+  <children>
+    <Panel AnchorPane.bottomAnchor="88" AnchorPane.topAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel" layoutX="8" layoutY="8" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="384" prefWidth="168" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+      <children>
+        <ListViewEx AnchorPane.bottomAnchor="7" AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" AnchorPane.topAnchor="7" editable="false" fixedCellSize="-1" focusTraversable="true" id="listView" layoutX="8" layoutY="8" prefHeight="368" prefWidth="152" styleClass="list-view ">
+          <items xmlns:fx="http://javafx.com/fxml">
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="1"/>
+              <String fx:value="2"/>
+              <String fx:value="3"/>
+              <String fx:value="4"/>
+            </FXCollections>
+          </items>
+        </ListViewEx>
+        <Data cursor="DEFAULT" enabled="1" id="data-listView" visible="1"/>
+      </children>
+      <titleFont>
+        <Font name="System Regular" size="13"/>
+      </titleFont>
+    </Panel>
+    <Data cursor="DEFAULT" enabled="1" id="data-panel" visible="1"/>
+    <Panel AnchorPane.bottomAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panelAlt" layoutX="184" layoutY="416" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="56" prefWidth="120" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+      <children>
+        <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="install" layoutX="8" layoutY="6" prefHeight="44" prefWidth="48" styleClass="button " text="Установить" textAlignment="CENTER" underline="false" wrapText="false">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </Button>
+        <Data cursor="DEFAULT" enabled="" graphic=".data/img/add.png" id="data-install" tooltipText="Установить :)" visible="1"/>
+        <Button alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="newlibs" layoutX="64" layoutY="6" prefHeight="44" prefWidth="48" styleClass="button " text="" textAlignment="CENTER" underline="false" wrapText="false">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </Button>
+        <Data cursor="DEFAULT" enabled="1" graphic=".data/img/projects.png" id="data-newlibs" tooltipText="Добавить новый модуль" visible="1"/>
+      </children>
+      <titleFont>
+        <Font name="System Regular" size="13"/>
+      </titleFont>
+    </Panel>
+    <Data cursor="DEFAULT" enabled="1" id="data-panelAlt" visible="1"/>
+    <Panel AnchorPane.bottomAnchor="72" AnchorPane.leftAnchor="184" AnchorPane.rightAnchor="176" AnchorPane.topAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel3" layoutX="184" layoutY="8" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="400" prefWidth="280" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+      <children>
+        <WebView AnchorPane.bottomAnchor="7" AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" AnchorPane.topAnchor="7" focusTraversable="true" id="browser" layoutX="8" layoutY="8" prefHeight="384" prefWidth="424"/>
+        <Data cursor="DEFAULT" enabled="1" id="data-browser" visible="1"/>
+      </children>
+      <titleFont>
+        <Font name="System Regular" size="13"/>
+      </titleFont>
+    </Panel>
+    <Data cursor="DEFAULT" enabled="1" id="data-panel3" visible="1"/>
+    <Panel AnchorPane.bottomAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel4" layoutX="8" layoutY="400" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="72" prefWidth="168" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+      <children>
+        <ComboBox editable="false" focusTraversable="true" id="version" layoutX="8" layoutY="40" prefHeight="25" prefWidth="152" promptText="Версия " styleClass="combo-box-base combo-box " value="" visibleRowCount="10">
+          <items xmlns:fx="http://javafx.com/fxml">
+            <FXCollections fx:factory="observableArrayList"/>
+          </items>
+        </ComboBox>
+        <Data cursor="DEFAULT" enabled="" id="data-version" visible="1"/>
+        <ComboBox editable="false" focusTraversable="true" id="categoria" layoutX="8" layoutY="8" prefHeight="25" prefWidth="152" promptText="" styleClass="combo-box-base combo-box " value="Прочее" visibleRowCount="10">
+          <items xmlns:fx="http://javafx.com/fxml">
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Прочее"/>
+              <String fx:value="Анимация"/>
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Data cursor="DEFAULT" enabled="1" id="data-categoria" visible="1"/>
+      </children>
+      <titleFont>
+        <Font name="System Regular" size="13"/>
+      </titleFont>
+    </Panel>
+    <Data cursor="DEFAULT" enabled="1" id="data-panel4" visible="1"/>
+    <ListViewEx AnchorPane.rightAnchor="8" editable="false" fixedCellSize="-1" focusTraversable="true" id="csslist" layoutX="472" layoutY="8" prefHeight="192" prefWidth="160" styleClass="list-view ">
+      <items xmlns:fx="http://javafx.com/fxml">
+        <FXCollections fx:factory="observableArrayList"/>
+      </items>
+    </ListViewEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-csslist" visible="1"/>
+    <ListViewEx AnchorPane.bottomAnchor="72" AnchorPane.rightAnchor="8" AnchorPane.topAnchor="208" editable="false" fixedCellSize="-1" focusTraversable="true" id="jslist" layoutX="472" layoutY="208" prefHeight="200" prefWidth="160" styleClass="list-view ">
+      <items xmlns:fx="http://javafx.com/fxml">
+        <FXCollections fx:factory="observableArrayList"/>
+      </items>
+    </ListViewEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-jslist" visible="1"/>
+  </children>
+</AnchorPane>

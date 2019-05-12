@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project author="merkus" authorOS="Linux" createdAt="1554378404346" ideName="DevelNext" ideVersion="16.7.0" ideVersionHash="2017103112" name="bftk" packageName="app" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1557027250880">
+<project author="merkus" authorOS="Linux" createdAt="1554378404346" ideName="DevelNext" ideVersion="16.7.0" ideVersionHash="2017103112" name="bftk" packageName="app" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1557627000030">
   <tree>
     <expanded>
     <path src=""/>
+      <path src="/src"/>
+      <path src="/src/app"/>
+      <path src="/src/app/modules"/>
+      <path src="/src/.data"/>
+      <path src="/src/.data/img"/>
+      <path src="/tmp"/>
     </expanded>
   </tree>
   <openedFiles>
   <file src="bftk.dnproject"/>
     <file src="src/app/modules/MainModule.php"/>
-    <file selected="1" src="src/app/forms/MainForm.php"/>
+    <file src="src/app/forms/MainForm.php"/>
     <file src="src/app/forms/option.php"/>
     <file src="src/app/forms/createnewtheme.php"/>
+    <file selected="1" src="src/app/forms/packagemanager.php"/>
+    <file src="src/app/forms/newlibs.php"/>
+    <file src="src/app/modules/storeModule.php"/>
   </openedFiles>
   <files/>
   <behaviours>

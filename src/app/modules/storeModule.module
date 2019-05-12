@@ -1,0 +1,32 @@
+{
+  "props": {
+    "version": "0.1",
+    "author": "savei932",
+    "description": "Модуль для работы с магазином",
+    "singleton": false
+  },
+  "components": {
+    "downloader": {
+      "type": "bundle\\http\\HttpDownloader",
+      "x": 208.0,
+      "y": 464.0,
+      "props": {
+        "threadCount": 256
+      }
+    },
+    "httpClient": {
+      "type": "bundle\\http\\HttpClient",
+      "x": 208,
+      "y": 320,
+      "props": {
+        "requestType": "URLENCODE",
+        "responseType": "TEXT",
+        "connectTimeout": "15000",
+        "readTimeout": "0",
+        "followRedirects": "1",
+        "proxyType": "DIRECT",
+        "userAgent": "Simple Bot v1.0"
+      }
+    }
+  }
+}

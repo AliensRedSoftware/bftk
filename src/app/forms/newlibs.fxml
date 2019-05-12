@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.paint.*?><?import javafx.scene.web.*?><?import javafx.geometry.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480" prefWidth="320" styleClass="">
+  <children>
+    <Panel AnchorPane.bottomAnchor="56" AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" AnchorPane.topAnchor="56" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel" layoutX="8" layoutY="56" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="368" prefWidth="304" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+      <children>
+        <ListViewEx AnchorPane.bottomAnchor="111" AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="15" AnchorPane.topAnchor="88" editable="false" fixedCellSize="-1" focusTraversable="true" id="listView" layoutX="8" layoutY="89" prefHeight="168" prefWidth="280" styleClass="list-view ">
+          <items xmlns:fx="http://javafx.com/fxml">
+            <FXCollections fx:factory="observableArrayList"/>
+          </items>
+        </ListViewEx>
+        <Data cursor="DEFAULT" enabled="1" id="data-listView" visible="1"/>
+        <ComboBox AnchorPane.bottomAnchor="77" AnchorPane.leftAnchor="79" AnchorPane.rightAnchor="15" editable="false" focusTraversable="true" id="categoria" layoutX="80" layoutY="265" prefHeight="25" prefWidth="200" promptText="" styleClass="combo-box-base combo-box " value="Прочее" visibleRowCount="10">
+          <items xmlns:fx="http://javafx.com/fxml">
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Прочее"/>
+              <String fx:value="Анимация"/>
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Data cursor="DEFAULT" enabled="1" id="data-categoria" visible="1"/>
+        <TextField AnchorPane.bottomAnchor="39" AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="15" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="url" layoutX="8" layoutY="296" prefColumnCount="12" prefHeight="32" prefWidth="272" promptText="Url - адрес проекта" styleClass="text-input text-field " text="">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </TextField>
+        <Data cursor="DEFAULT" enabled="1" id="data-url" visible="1"/>
+        <LabelEx AnchorPane.bottomAnchor="79" alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="label" layoutX="8" layoutY="264" prefHeight="24" prefWidth="72" styleClass="label " text="Категория:" textAlignment="LEFT" underline="false" wrapText="false">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </LabelEx>
+        <Data cursor="DEFAULT" enabled="1" id="data-label" visible="1"/>
+        <CheckBox AnchorPane.bottomAnchor="7" alignment="CENTER_LEFT" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="css" layoutX="8" layoutY="336" prefHeight="24" prefWidth="48" styleClass="check-box " text="css" textAlignment="LEFT" underline="false" wrapText="false">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </CheckBox>
+        <Data cursor="DEFAULT" enabled="1" id="data-css" visible="1"/>
+        <CheckBox AnchorPane.bottomAnchor="7" alignment="CENTER_LEFT" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="js" layoutX="64" layoutY="336" prefHeight="24" prefWidth="40" styleClass="check-box " text="js" textAlignment="LEFT" underline="false" wrapText="false">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </CheckBox>
+        <Data cursor="DEFAULT" enabled="1" id="data-js" visible="1"/>
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="15" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="ver" layoutX="8" layoutY="48" prefColumnCount="12" prefHeight="32" prefWidth="280" promptText="Версия:" styleClass="text-input text-field " text="">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </TextField>
+        <Data cursor="DEFAULT" enabled="1" id="data-ver" visible="1"/>
+        <CheckBox AnchorPane.bottomAnchor="7" alignment="CENTER_LEFT" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="openfile" layoutX="112" layoutY="336" prefHeight="24" prefWidth="136" styleClass="check-box " text="Открытие файлы" textAlignment="LEFT" underline="false" wrapText="false">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </CheckBox>
+        <Data cursor="DEFAULT" enabled="1" id="data-openfile" visible="1"/>
+      </children>
+      <titleFont>
+        <Font name="System Regular" size="13"/>
+      </titleFont>
+    </Panel>
+    <Data cursor="DEFAULT" enabled="1" id="data-panel" visible="1"/>
+    <Button AnchorPane.bottomAnchor="12" AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="send" layoutX="8" layoutY="432" prefHeight="34" prefWidth="296" styleClass="button success " text="Выполнить" textAlignment="CENTER" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="13"/>
+      </font>
+    </Button>
+    <Data cursor="DEFAULT" enabled="1" graphic=".data/img/gtk_apply3.png" id="data-send" visible="1"/>
+    <Button alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="filezip" layoutX="8" layoutY="8" prefHeight="44" prefWidth="48" styleClass="button " text="" textAlignment="CENTER" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="13"/>
+      </font>
+    </Button>
+    <Data cursor="DEFAULT" enabled="1" graphic=".data/img/add.png" id="data-filezip" visible="1"/>
+    <TextField AnchorPane.leftAnchor="16" AnchorPane.rightAnchor="24" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="name" layoutX="16" layoutY="64" prefColumnCount="12" prefHeight="32" prefWidth="280" promptText="Название" styleClass="text-input text-field " text="">
+      <font>
+        <Font name="System Regular" size="13"/>
+      </font>
+    </TextField>
+    <Data cursor="DEFAULT" enabled="1" id="data-name" visible="1"/>
+    <Button alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="clear" layoutX="64" layoutY="8" prefHeight="44" prefWidth="48" styleClass="button " text="" textAlignment="CENTER" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="13"/>
+      </font>
+    </Button>
+    <Data cursor="DEFAULT" enabled="1" graphic=".data/img/delete.png" id="data-clear" visible="1"/>
+  </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+{
+  "url": "https://github.com/daneden/animate.css/",
+  "categoria": "Анимация",
+  "version": [
+    "1.0"
+  ],
+  "1.0": {
+    "js": [
+      []
+    ],
+    "css": [
+      [
+        "animate.css"
+      ]
+    ]
+  }
+}

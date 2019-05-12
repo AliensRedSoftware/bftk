@@ -89,12 +89,20 @@ class mysql {
          $MainForm->logserver->selected = $this->ini->get('log', $MainForm->themes->selected);
          $MainForm->execute->text = $this->ini->get('execute', $MainForm->themes->selected);
          $MainForm->libphp->text = $this->ini->get('libphp', $MainForm->themes->selected);
+         $MainForm->js->text = $this->ini->get('js', $MainForm->themes->selected);
+         $MainForm->css->text = $this->ini->get('css', $MainForm->themes->selected);
      }
      
     /**
      * Создать новую тему
      */
-    public function createtheme ($name, $execute, $libphp, $description, $tag) {
+    public function createtheme ($name, $execute, $libphp, $description, $tag, $js, $css) {
+        if (trim($js) == null) {
+            $js = 'js';
+        }        
+        if (trim($css) == null) {
+            $css = 'css';
+        }
         if (trim($libphp) == null) {
             $libphp = 'page';
         }
@@ -115,8 +123,8 @@ class mysql {
             $theme->selected = $name->text;
             mkdir($name->text . fs::separator() . 'uri');
             mkdir($name->text . fs::separator() . $libphp);
-            mkdir($name->text . fs::separator() . 'js');
-            mkdir($name->text . fs::separator() . 'css');
+            mkdir($name->text . fs::separator() . $js);
+            mkdir($name->text . fs::separator() . $css);
             if (trim($execute) == null) {
                 $execute = $name->text;
             }
@@ -124,7 +132,7 @@ class mysql {
             $this->cheadlib($name->text, $libphp, $description, $tag);
             $this->cbody($name->text, $libphp);
             $this->cfooter($name->text, $libphp);
-            $this->setoptions(false, $name->text, $execute, $libphp);
+            $this->setoptions(false, $name->text, $execute, $libphp, $css, $js);
             Dialog::alert("Успешно создалась тема! => $name->text");
             app()->form(createnewtheme)->hide();
         }
@@ -201,13 +209,15 @@ class footer extends xlib {
     /**
      * Установить настройки 
      */
-    public function setoptions ($log, $theme, $execute, $libphp) {
+    public function setoptions ($log, $theme, $execute, $libphp, $css, $js) {
         $this->ini->set('theme', $theme, 'options');
         $this->ini->put([
             'log' => $log,
             'theme' => $theme,
             'execute' => $execute,
-            'libphp' => $libphp
+            'libphp' => $libphp,
+            'css' => $css,
+            'js' => $js
         ], $theme);
         if ($log == true) {
             $log = 'true';
@@ -237,4 +247,25 @@ class options {
              dialog::alert('Успешно удалилась тема!');
          }
      }
+     
+    /**
+     * Возвращает подключенную тему 
+     */
+    public function getTheme() {
+        return $this->ini->get('theme','options');
+    }
+    
+    /**
+     * Возвращает путь к css
+     */
+    public function getPath_css() {
+        return $this->ini->get('css', $this->getTheme());
+    }
+    
+    /**
+     * Возвращает путь к js
+     */
+    public function getPath_js() {
+        return $this->ini->get('js', $this->getTheme());
+    }
 }

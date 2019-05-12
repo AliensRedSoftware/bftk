@@ -7,12 +7,43 @@
   "components": {
     "ini": {
       "type": "script\\storage\\IniStorage",
-      "x": 144,
-      "y": 304,
+      "x": 288,
+      "y": 272,
       "props": {
         "path": "config.ini",
         "autoSave": "1",
         "multiLineValues": "1"
+      }
+    },
+    "httpClient": {
+      "type": "bundle\\http\\HttpClient",
+      "x": 288,
+      "y": 208,
+      "props": {
+        "requestType": "URLENCODE",
+        "responseType": "TEXT",
+        "connectTimeout": "15000",
+        "readTimeout": "0",
+        "followRedirects": "1",
+        "proxyType": "DIRECT",
+        "userAgent": "Simple Bot v1.0"
+      }
+    },
+    "downloader": {
+      "type": "bundle\\http\\HttpDownloader",
+      "x": 208.0,
+      "y": 208.0,
+      "props": {
+        "threadCount": 256
+      }
+    },
+    "zipFile": {
+      "type": "bundle\\zip\\ZipFileScript",
+      "x": 288,
+      "y": 144,
+      "props": {
+        "path": "",
+        "autoCreate": "1"
       }
     }
   }
