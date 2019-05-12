@@ -189,16 +189,21 @@ class packagemanager extends AbstractForm {
     function doInstallAction(UXEvent $e = null) {
         $theme = $this->getTheme();
         $css = $this->getPath_css();
+        $js = $this->getPath_js();
         $categoria = $this->categoria->selected;
         $name = $this->listView->selectedItem;
         $ver = $this->version->selected;
         $this->listView->selectedIndex = -1;
-        $url = "https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/zip/$categoria/$name/$ver/css/";
+        $url = "https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/zip/$categoria/$name/$ver/";
         if ($e->sender->tooltipText == 'Удалить') {
             if (uiConfirm("Вы точно хотите удалить это ?)")) {
-                $path = "./$theme/$css/";
+                $pathcss = "./$theme/$css/";
+                $pathjs = "./$theme/$js/";
                 foreach ($this->csslist->items->toArray() as $value) {
-                    fs::delete($path . $value);
+                    fs::delete($pathcss . $value);
+                }
+                foreach ($this->jslist->items->toArray() as $value) {
+                    fs::delete($pathjs . $value);
                 }
                 $this->toast('Успешно удалилось');
                 $this->listView->selectedIndex = 0;
@@ -206,9 +211,12 @@ class packagemanager extends AbstractForm {
         } else {
             $this->showPreloader('Скачивается файл...');
             $arraycss = [];
+            $arrayjs = [];
             foreach ($this->csslist->items->toArray() as $value) {
-                Logger::info($url . $value);
-                array_push($arraycss, $url . $value);
+                array_push($arraycss, $url . 'css/' . $value);
+            }            
+            foreach ($this->jslist->items->toArray() as $value) {
+                array_push($arrayjs, $url . 'js/' . $value);
             }
             $this->downloader->on('successAll', function () {
                 $this->toast('Успешно устанавилась!');
@@ -218,6 +226,14 @@ class packagemanager extends AbstractForm {
             $this->downloader->urls = $arraycss;
             $this->downloader->destDirectory = "./$theme/$css/";
             $this->downloader->start();
+            $this->downloaderAlt->on('successAll', function () {
+                $this->toast('Успешно устанавилась!');
+                $this->listView->selectedIndex = 0;
+                $this->hidePreloader();
+            });
+            $this->downloaderAlt->urls = $arrayjs;
+            $this->downloaderAlt->destDirectory = "./$theme/$js/";
+            $this->downloaderAlt->start();
         }
     }
 
