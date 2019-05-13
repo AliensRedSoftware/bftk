@@ -3,23 +3,23 @@
 gui утилита для упрощенной работы с ftk
 
 # Управление темами ftk
-[![Управление темами ftk](https://i.postimg.cc/pd5VbS7c/screenshot.png)](https://postimg.cc/R39xwgvw)
+[![Управление темами ftk](https://i.postimg.cc/RV7rF36L/screenshot.png)](https://postimg.cc/gn2tt2Kx)
 
 # Функционал
 * Управление темами ftk
 * Настройка mysql
-* Модульный менеджер
+* Менеджер модулей
 * Создание темы
 * Создание новых модулей
 
 # Настройка mysql
 [![Настройка mysql](https://i.postimg.cc/TY1Z4DBC/screenshot.png)](https://postimg.cc/JGw6yGrk)
 
-# Модульный менеджер
-[![Модульный менеджер](https://i.postimg.cc/26jHBpD2/screenshot.png)](https://postimg.cc/yJ5hwbWZ)
+# Менеджер модулей
+[![Менеджер модулей](https://i.postimg.cc/zG4Tcf74/screenshot.png)](https://postimg.cc/xXykknWP)
 
 # Создание темы
-[![Создание темы](https://i.postimg.cc/DzvD14Qr/screenshot.png)](https://postimg.cc/4Y0BgdSy)
+[![Создание темы](https://i.postimg.cc/Dzt5LgRJ/screenshot.png)](https://postimg.cc/TyJrXrdf)
 
 # Создание новых модулей
-[![Создание новых модулей](https://i.postimg.cc/BQ2wyBM5/screenshot.png)](https://postimg.cc/SJNrYC0j)
+[![Создание новых модулей](https://i.postimg.cc/9FRMNYkF/screenshot.png)](https://postimg.cc/ZCm4WpZ1)
