@@ -1,6 +1,7 @@
 <?php
 namespace app\forms;
 
+use facade\Json;
 use std, gui, framework, app;
 
 class packagemanager extends AbstractForm {
@@ -49,8 +50,9 @@ class packagemanager extends AbstractForm {
                 $this->toast("Я не смогла загрузить сайт с проектом :(");
                 $this->hidePreloader();
                 return ;
+            } else {
+                $this->browser->engine->load($url);
             }
-            $this->browser->engine->load($url);
         });
     }
 
@@ -60,6 +62,7 @@ class packagemanager extends AbstractForm {
     function doCategoriaAction(UXEvent $e = null) {
         $this->csslist->items->clear();
         $this->jslist->items->clear();
+        $this->phplist->items->clear();
         $this->version->items->clear();
         $this->install->enabled = false;
         $this->version->enabled = false;
@@ -77,8 +80,14 @@ class packagemanager extends AbstractForm {
                 $listSorting = new UXListView();
                 foreach ($this->listView->items->toArray() as $val) {
                     $request = 'https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/cuka/' . $val . '.json';
-                    $this->httpClient->getAsync($request, [], function ($e) use ($val,$listSorting) {
-                        $listSorting->items->add($val);
+                    $this->httpClient->getAsync($request, [], function ($e) use ($val, $listSorting) {
+                        $data = Json::decode($e->body());
+                        $modules = $data['modules'];
+                        if ($modules == true && $this->isModules->selected) {
+                            $listSorting->items->add($val);
+                        } elseif ($modules == false && !$this->isModules->selected) {
+                            $listSorting->items->add($val);
+                        }
                     });
                 }
                 $this->listView->items = $listSorting->items;
@@ -98,10 +107,15 @@ class packagemanager extends AbstractForm {
                 $listSorting = new UXListView();
                 foreach ($this->listView->items->toArray() as $val) {
                     $request = 'https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/cuka/' . $val . '.json';
-                    $this->httpClient->getAsync($request, [], function ($e) use ($val,$listSorting) {
+                    $this->httpClient->getAsync($request, [], function ($e) use ($val, $listSorting) {
                         $data = Json::decode($e->body());
                         if ($data['categoria'] == $this->categoria->selected) {
-                            $listSorting->items->add($val);
+                            $modules = $data['modules'];
+                            if ($modules == true && $this->isModules->selected ) {
+                                $listSorting->items->add($val);
+                            } elseif ($modules == false && !$this->isModules->selected) {
+                                $listSorting->items->add($val);
+                            }
                         }
                     });
                 }
@@ -153,6 +167,9 @@ class packagemanager extends AbstractForm {
         if (!$this->jslist->items->isEmpty()) {
             $this->jslist->items->clear();
         }
+        if (!$this->phplist->items->isEmpty()) {
+            $this->phplist->items->clear();
+        }
         if ($e->sender->items->isEmpty()) {
             return ;
         }
@@ -164,14 +181,18 @@ class packagemanager extends AbstractForm {
             $data = Json::decode($e->body());
             $csslist = $data[$ver]["css"];
             $jslist = $data[$ver]["js"];
+            $phplist = $data[$ver]["php"];
             foreach ($csslist[0] as $css) {
                 $this->csslist->items->add($css);
             }
             foreach ($jslist[0] as $js) {
                 $this->jslist->items->add($js);
+            }            
+            foreach ($phplist[0] as $php) {
+                $this->phplist->items->add($php);
             }
             $this->hidePreloader();
-            $installed = $this->getInstalled($this->csslist->items->toArray(), $this->jslist->items->toArray());
+            $installed = $this->getInstalled($this->csslist->items->toArray(), $this->jslist->items->toArray(), $this->phplist->items->toArray());
             $this->install->enabled = true;
             if ($installed == true) {
                 $this->install->graphic = new UXImageView (new UXImage("res://.data/img/delete.png"));
@@ -190,52 +211,148 @@ class packagemanager extends AbstractForm {
         $theme = $this->getTheme();
         $css = $this->getPath_css();
         $js = $this->getPath_js();
+        $modules = $this->getPath_modules();
         $categoria = $this->categoria->selected;
         $name = $this->listView->selectedItem;
         $ver = $this->version->selected;
         $previwselected = $this->listView->selectedIndex;
-        $this->listView->selectedIndex = -1;
+        $selected = $this->listView->selectedItem;
         $url = "https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/zip/$categoria/$name/$ver/";
         if ($e->sender->tooltipText == 'Удалить') {
             if (uiConfirm("Вы точно хотите удалить это ?)")) {
                 $pathcss = "./$theme/$css/";
                 $pathjs = "./$theme/$js/";
+                $pathphp = "./$theme/$modules/$selected/";
                 foreach ($this->csslist->items->toArray() as $value) {
                     fs::delete($pathcss . $value);
                 }
                 foreach ($this->jslist->items->toArray() as $value) {
                     fs::delete($pathjs . $value);
                 }
+                foreach ($this->phplist->items->toArray() as $value) {
+                    fs::clean($pathphp);
+                    fs::delete("./$theme/$modules/" . explode('.', $value)[0]);
+                }
+                $this->listView->selectedIndex = -1;
                 $this->toast('Успешно удалилось');
                 $this->listView->selectedIndex = $previwselected;
             }
         } else {
+            $this->listView->selectedIndex = -1;
             $this->showPreloader('Скачивается файл...');
             $arraycss = [];
             $arrayjs = [];
+            $arraymodules = [];
             foreach ($this->csslist->items->toArray() as $value) {
                 array_push($arraycss, $url . 'css/' . $value);
             }            
             foreach ($this->jslist->items->toArray() as $value) {
                 array_push($arrayjs, $url . 'js/' . $value);
             }
+            foreach ($this->phplist->items->toArray() as $value) {
+                Logger::info($url . 'php/' . $value);
+                array_push($arraymodules, $url . 'php/' . $value);
+            }
             $this->downloader->on('successAll', function () use ($previwselected) {
-                $this->toast('Успешно устанавилась!');
+                $this->toast('Успешно устанавилась => css');
                 $this->listView->selectedIndex = $previwselected;
                 $this->hidePreloader();
+                
             });
             $this->downloader->urls = $arraycss;
             $this->downloader->destDirectory = "./$theme/$css/";
             $this->downloader->start();
+            //
             $this->downloaderAlt->on('successAll', function () use ($previwselected) {
-                $this->toast('Успешно устанавилась!');
+                $this->toast('Успешно устанавилась => js');
                 $this->listView->selectedIndex = $previwselected;
                 $this->hidePreloader();
             });
             $this->downloaderAlt->urls = $arrayjs;
             $this->downloaderAlt->destDirectory = "./$theme/$js/";
             $this->downloaderAlt->start();
+            //
+            $this->downloader3->on('successAll', function () use ($previwselected, $theme, $modules, $selected) {
+                $this->toast('Успешно устанавилась => modules');
+                fs::rename("./$theme/$modules/$selected/$selected", $selected . ".php");
+                $this->listView->selectedIndex = $previwselected;
+                $this->hidePreloader();
+            });
+            $this->downloader3->urls = $arraymodules;
+            if (!fs::isDir("./$theme/$modules/$selected")) {
+                mkdir("./$theme/$modules/$selected");
+            }
+            $this->downloader3->destDirectory = "./$theme/$modules/$selected/";
+            $this->downloader3->start();
         }
     }
 
+    /**
+     * @event isModules.click-Left 
+     */
+    function doIsModulesClickLeft(UXMouseEvent $e = null) {
+        $this->csslist->items->clear();
+        $this->jslist->items->clear();
+        $this->phplist->items->clear();
+        $this->version->items->clear();
+        $this->install->enabled = false;
+        $this->version->enabled = false;
+        if ($this->categoria->selectedIndex == 0) {
+            $request = 'https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/cuka.php/getlist';
+            $this->showPreloader('Получение списка пожалуйста подождите...');
+            $this->httpClient->getAsync($request, [], function ($e) use ($aut) {
+                $this->listView->items->clear();
+                foreach (explode("\n", $e->body()) as $value) {
+                    $file = explode('.', $value);
+                    $this->listView->items->add($file[0]);
+                }
+                $this->hidePreloader();
+                $this->showPreloader('Обработка списка пожалуйста подождите...');
+                $listSorting = new UXListView();
+                foreach ($this->listView->items->toArray() as $val) {
+                    $request = 'https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/cuka/' . $val . '.json';
+                    $this->httpClient->getAsync($request, [], function ($e) use ($val, $listSorting) {
+                        $data = Json::decode($e->body());
+                        $modules = $data['modules'];
+                        if ($modules == true && $this->isModules->selected) {
+                            $listSorting->items->add($val);
+                        } elseif ($modules == false && !$this->isModules->selected) {
+                            $listSorting->items->add($val);
+                        }
+                    });
+                }
+                $this->listView->items = $listSorting->items;
+                $this->hidePreloader();
+            });
+        } elseif ($this->categoria->selectedIndex == 1) {
+            $request = 'https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/cuka.php/getlist';
+            $this->showPreloader('Получение списка пожалуйста подождите...');
+            $this->httpClient->getAsync($request, [], function ($e) use ($aut) {
+                $this->listView->items->clear();
+                foreach (explode("\n", $e->body()) as $value) {
+                    $file = explode('.', $value);
+                    $this->listView->items->add($file[0]);
+                }
+                $this->hidePreloader();
+                $this->showPreloader('Обработка списка пожалуйста подождите...');
+                $listSorting = new UXListView();
+                foreach ($this->listView->items->toArray() as $val) {
+                    $request = 'https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/cuka/' . $val . '.json';
+                    $this->httpClient->getAsync($request, [], function ($e) use ($val, $listSorting) {
+                        $data = Json::decode($e->body());
+                        if ($data['categoria'] == $this->categoria->selected) {
+                            $modules = $data['modules'];
+                            if ($modules == true && $this->isModules->selected ) {
+                                $listSorting->items->add($val);
+                            } elseif ($modules == false && !$this->isModules->selected) {
+                                $listSorting->items->add($val);
+                            }
+                        }
+                    });
+                }
+                $this->listView->items = $listSorting->items;
+                $this->hidePreloader();
+            });
+        }
+    }
 }

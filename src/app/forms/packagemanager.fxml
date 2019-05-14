@@ -2,12 +2,19 @@
 <?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.paint.*?><?import javafx.scene.web.*?><?import javafx.geometry.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480" prefWidth="640" styleClass="">
   <children>
     <Panel AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel5" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="480" prefWidth="640" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
-      <children/>
+      <children>
+        <ListViewEx AnchorPane.bottomAnchor="71" AnchorPane.rightAnchor="7" AnchorPane.topAnchor="247" editable="false" fixedCellSize="-1" focusTraversable="true" id="phplist" layoutX="472" layoutY="248" prefHeight="160" prefWidth="160" styleClass="list-view ">
+          <items xmlns:fx="http://javafx.com/fxml">
+            <FXCollections fx:factory="observableArrayList"/>
+          </items>
+        </ListViewEx>
+        <Data cursor="DEFAULT" enabled="1" id="data-phplist" visible="1"/>
+      </children>
       <titleFont>
         <Font name="System Regular" size="13"/>
       </titleFont>
     </Panel>
-    <Panel AnchorPane.bottomAnchor="88" AnchorPane.topAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel" layoutX="8" layoutY="8" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="384" prefWidth="168" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+    <Panel AnchorPane.bottomAnchor="120" AnchorPane.topAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel" layoutX="8" layoutY="8" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="352" prefWidth="168" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children>
         <ListViewEx AnchorPane.bottomAnchor="7" AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" AnchorPane.topAnchor="7" editable="false" fixedCellSize="-1" focusTraversable="true" id="listView" layoutX="8" layoutY="8" prefHeight="368" prefWidth="152" styleClass="list-view ">
           <items xmlns:fx="http://javafx.com/fxml">
@@ -56,7 +63,7 @@
       </titleFont>
     </Panel>
     <Data cursor="DEFAULT" enabled="1" id="data-panel3" visible="1"/>
-    <Panel AnchorPane.bottomAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel4" layoutX="8" layoutY="400" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="72" prefWidth="168" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+    <Panel AnchorPane.bottomAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel4" layoutX="8" layoutY="368" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="104" prefWidth="168" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children>
         <ComboBox editable="false" focusTraversable="true" id="version" layoutX="8" layoutY="40" prefHeight="25" prefWidth="152" promptText="Версия " styleClass="combo-box-base combo-box " value="" visibleRowCount="10">
           <items xmlns:fx="http://javafx.com/fxml">
@@ -73,19 +80,25 @@
           </items>
         </ComboBox>
         <Data cursor="DEFAULT" enabled="1" id="data-categoria" visible="1"/>
+        <CheckBox alignment="CENTER_LEFT" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="isModules" layoutX="8" layoutY="72" prefHeight="24" prefWidth="152" styleClass="check-box " text="Модули" textAlignment="LEFT" underline="false" wrapText="false">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </CheckBox>
+        <Data cursor="DEFAULT" enabled="1" id="data-isModules" visible="1"/>
       </children>
       <titleFont>
         <Font name="System Regular" size="13"/>
       </titleFont>
     </Panel>
     <Data cursor="DEFAULT" enabled="1" id="data-panel4" visible="1"/>
-    <ListViewEx AnchorPane.rightAnchor="8" editable="false" fixedCellSize="-1" focusTraversable="true" id="csslist" layoutX="472" layoutY="8" prefHeight="192" prefWidth="160" styleClass="list-view ">
+    <ListViewEx AnchorPane.rightAnchor="8" editable="false" fixedCellSize="-1" focusTraversable="true" id="csslist" layoutX="472" layoutY="8" prefHeight="112" prefWidth="160" styleClass="list-view ">
       <items xmlns:fx="http://javafx.com/fxml">
         <FXCollections fx:factory="observableArrayList"/>
       </items>
     </ListViewEx>
     <Data cursor="DEFAULT" enabled="1" id="data-csslist" visible="1"/>
-    <ListViewEx AnchorPane.bottomAnchor="72" AnchorPane.rightAnchor="8" AnchorPane.topAnchor="208" editable="false" fixedCellSize="-1" focusTraversable="true" id="jslist" layoutX="472" layoutY="208" prefHeight="200" prefWidth="160" styleClass="list-view ">
+    <ListViewEx AnchorPane.rightAnchor="8" AnchorPane.topAnchor="128" editable="false" fixedCellSize="-1" focusTraversable="true" id="jslist" layoutX="472" layoutY="128" prefHeight="112" prefWidth="160" styleClass="list-view ">
       <items xmlns:fx="http://javafx.com/fxml">
         <FXCollections fx:factory="observableArrayList"/>
       </items>

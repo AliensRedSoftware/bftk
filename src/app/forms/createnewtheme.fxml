@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.paint.*?><?import javafx.scene.web.*?><?import javafx.geometry.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480" prefWidth="320" styleClass="">
+<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.paint.*?><?import javafx.scene.web.*?><?import javafx.geometry.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568" prefWidth="320" styleClass="">
   <children>
-    <Panel AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel4" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="480" prefWidth="320" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+    <Panel AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel4" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="568" prefWidth="320" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children/>
       <titleFont>
         <Font name="System Regular" size="13"/>
@@ -33,20 +33,20 @@
       </titleFont>
     </Panel>
     <Data cursor="DEFAULT" enabled="1" id="data-panel" visible="1"/>
-    <Panel AnchorPane.bottomAnchor="56" AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" AnchorPane.topAnchor="336" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="typetheme" layoutX="8" layoutY="336" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="88" prefWidth="304" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+    <Panel AnchorPane.bottomAnchor="56" AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" AnchorPane.topAnchor="376" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="typetheme" layoutX="8" layoutY="376" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="136" prefWidth="304" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children/>
       <titleFont>
         <Font name="System Regular" size="13"/>
       </titleFont>
     </Panel>
     <Data cursor="DEFAULT" enabled="1" id="data-typetheme" visible="1"/>
-    <Button AnchorPane.bottomAnchor="12" AnchorPane.rightAnchor="8" alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="createnewtheme" layoutX="168" layoutY="432" prefHeight="32" prefWidth="144" styleClass="button " text="Создать!" textAlignment="CENTER" underline="false" wrapText="false">
+    <Button AnchorPane.bottomAnchor="12" AnchorPane.rightAnchor="8" alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="createnewtheme" layoutX="168" layoutY="520" prefHeight="32" prefWidth="144" styleClass="button " text="Создать!" textAlignment="CENTER" underline="false" wrapText="false">
       <font>
         <Font name="System Regular" size="13"/>
       </font>
     </Button>
     <Data cursor="DEFAULT" enabled="1" graphic=".data/img/gtk_apply3.png" id="data-createnewtheme" tooltipText="Создать тему!" visible="1"/>
-    <Panel AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panelAlt" layoutX="8" layoutY="240" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="88" prefWidth="304" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+    <Panel AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panelAlt" layoutX="8" layoutY="280" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="88" prefWidth="304" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children>
         <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="description" layoutX="8" layoutY="8" prefColumnCount="12" prefHeight="32" prefWidth="280" promptText="Описание" styleClass="text-input text-field " text="">
           <font>
@@ -66,20 +66,26 @@
       </titleFont>
     </Panel>
     <Data cursor="DEFAULT" enabled="1" id="data-panelAlt" visible="1"/>
-    <Panel AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel3" layoutX="8" layoutY="144" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="88" prefWidth="304" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+    <Panel AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel3" layoutX="8" layoutY="144" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="128" prefWidth="304" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children>
-        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="js" layoutX="8" layoutY="8" prefColumnCount="12" prefHeight="32" prefWidth="280" promptText="js path" styleClass="text-input text-field " text="">
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="js" layoutX="8" layoutY="8" prefColumnCount="12" prefHeight="32" prefWidth="280" promptText="js путь" styleClass="text-input text-field " text="">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-js" visible="1"/>
-        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="css" layoutX="8" layoutY="48" prefColumnCount="12" prefHeight="32" prefWidth="280" promptText="css path" styleClass="text-input text-field " text="">
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="css" layoutX="8" layoutY="48" prefColumnCount="12" prefHeight="32" prefWidth="280" promptText="css путь" styleClass="text-input text-field " text="">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-css" visible="1"/>
+        <TextField alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="modules" layoutX="8" layoutY="88" prefColumnCount="12" prefHeight="32" prefWidth="288" promptText="modules путь" styleClass="text-input text-field " text="">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </TextField>
+        <Data cursor="DEFAULT" enabled="1" id="data-modules" visible="1"/>
       </children>
       <titleFont>
         <Font name="System Regular" size="13"/>

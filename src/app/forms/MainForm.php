@@ -21,7 +21,7 @@ class MainForm extends AbstractForm {
         if ($this->ini->get('execute', $this->themes->selected) != $this->execute->text) {
             rename($this->themes->selected . fs::separator() . 'uri' . fs::separator() . $this->ini->get('execute', $this->themes->selected) .  '.php', $this->themes->selected . fs::separator() . 'uri' . fs::separator() . $this->execute->text . '.php');
         }
-        $this->setoptions($this->logserver->selected, $this->themes->selected, $this->execute->text, $this->libphp->text, $this->css->text, $this->js->text);
+        $this->setoptions($this->logserver->selected, $this->themes->selected, $this->execute->text, $this->libphp->text, $this->css->text, $this->js->text, $this->modules->text);
     }
 
     /**

@@ -16,7 +16,8 @@ class createnewtheme extends AbstractForm {
             $this->description->text, 
             $this->tag->text,
             $this->css->text,
-            $this->js->text
+            $this->js->text,
+            $this->modules->text
         );
     }
 

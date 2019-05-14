@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project author="merkus" authorOS="Linux" createdAt="1554378404346" ideName="DevelNext" ideVersion="16.7.0" ideVersionHash="2017103112" name="bftk" packageName="app" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1557704301122">
+<project author="merkus" authorOS="Linux" createdAt="1554378404346" ideName="DevelNext" ideVersion="16.7.0" ideVersionHash="2017103112" name="bftk" packageName="app" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1557800113415">
   <tree>
     <expanded>
     <path src=""/>
@@ -8,7 +8,6 @@
       <path src="/src/app/modules"/>
       <path src="/src/.data"/>
       <path src="/src/.data/img"/>
-      <path src="/tmp"/>
     </expanded>
   </tree>
   <openedFiles>

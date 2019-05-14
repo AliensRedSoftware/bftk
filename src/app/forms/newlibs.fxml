@@ -54,12 +54,18 @@
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-ver" visible="1"/>
-        <CheckBox AnchorPane.bottomAnchor="7" alignment="CENTER_LEFT" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="openfile" layoutX="112" layoutY="336" prefHeight="24" prefWidth="136" styleClass="check-box " text="Открытие файлы" textAlignment="LEFT" underline="false" wrapText="false">
+        <CheckBox AnchorPane.bottomAnchor="7" alignment="CENTER_LEFT" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="openfile" layoutX="168" layoutY="336" prefHeight="24" prefWidth="128" styleClass="check-box " text="Открытие файлы" textAlignment="LEFT" underline="false" wrapText="false">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </CheckBox>
         <Data cursor="DEFAULT" enabled="1" id="data-openfile" visible="1"/>
+        <CheckBox alignment="CENTER_LEFT" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="php" layoutX="112" layoutY="336" prefHeight="24" prefWidth="48" styleClass="check-box " text="php" textAlignment="LEFT" underline="false" wrapText="false">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </CheckBox>
+        <Data cursor="DEFAULT" enabled="1" id="data-php" visible="1"/>
       </children>
       <titleFont>
         <Font name="System Regular" size="13"/>

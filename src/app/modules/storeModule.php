@@ -1,6 +1,7 @@
 <?php
 namespace app\modules;
 
+use facade\Json;
 use std, gui, framework, app;
 
 class storeModule extends AbstractModule {
@@ -23,9 +24,8 @@ class storeModule extends AbstractModule {
     public function request ($method) {
         $packagemanager = app()->getForm(packagemanager);
         $packagemanager->showPreloader('Ожидание запроса...');
-        $this->httpClient->getAsync($this->url . $method, [], function ($e) use ($method, $packagemanager) {
+        $this->httpClient->getAsync($this->url . $method, [], function ($e) use ($method) {
             $this->redirect($method, $e->body());
-            $packagemanager->hidePreloader();
         });
     }
     
@@ -38,25 +38,38 @@ class storeModule extends AbstractModule {
             case 'getlist': 
                 $packagemanager->listView->items->clear();
                 foreach (explode("\n", $content) as $value) {
-                    $this->listView->items->add(explode('.', $value)[0]);
+                    $val = explode('.', $value)[0];
+                    $url = "https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/cuka/" . $val . '.json';
+                    $this->httpClient->getAsync($url, [], function ($data) use ($val, $packagemanager) {
+                        $data = Json::decode($data->body());
+                        $modules = $data['modules'];
+                        if ($modules == true && $packagemanager->isModules->selected) {
+                            $packagemanager->listView->items->add($val);
+                        } elseif ($modules == false && !$packagemanager->isModules->selected) {
+                            $packagemanager->listView->items->add($val);
+                        }
+                    });
+                    $packagemanager->hidePreloader();
                 }
             break;
         }
-        $packagemanager->hidePreloader();
     }
     
     /**
      * Возвращает есть такой модуль или нет 
      */
-    public function getInstalled(array $csslist, array $jslist) {
+    public function getInstalled(array $csslist, array $jslist, array $moduleslist) {
         $MainModule = new MainModule();
         $theme = $MainModule->getTheme();
         $css = $MainModule->getPath_css();
         $js = $MainModule->getPath_js();
+        $modules = $MainModule->getPath_modules();
         $csscurrent = fs::scan("./$theme/$css", ['extensions' => ['css'], 'excludeDirs' => true]);
         $jscurrent = fs::scan("./$theme/$js", ['extensions' => ['js'], 'excludeDirs' => true]);
+        $modulescurrent = fs::scan("./$theme/$modules", ['extensions' => ['php'], 'excludeDirs' => true]);
         $accesscss = 0;
         $accessjs = 0;
+        $accessmodules = 0;
         foreach ($csscurrent as $csscurrent) {
             $css = explode('/', $csscurrent);
             foreach ($csslist as $cssvalue) {
@@ -73,7 +86,15 @@ class storeModule extends AbstractModule {
                 }
             }
         }
-        if (count($csslist) == $accesscss && count($jslist) == $accessjs) {
+        foreach ($modulescurrent as $modulescurrent) {
+            $modules = explode("/", $modulescurrent);
+            foreach ($moduleslist as $modulesvalue) {
+                if ($modules[count($modules) - 1] == $modulesvalue . '.php') {
+                    $accessmodules++;
+                }
+            }
+        }
+        if (count($csslist) == $accesscss && count($jslist) == $accessjs && count($moduleslist) == $accessmodules) {
             return true;
         } else {
             return false;

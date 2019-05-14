@@ -55,6 +55,7 @@ class newlibs extends AbstractForm {
             mkdir("./tmp/$name/$ver");
             $js = [];
             $css = [];
+            $php = [];
             foreach ($this->listView->items->toArray() as $value) {
                 $extension = explode(".", $value);
                 if ($extension[count($extension) - 1] == 'css') {
@@ -71,18 +72,29 @@ class newlibs extends AbstractForm {
                     $execute = explode("/", $value);
                     array_push($js, $execute[count($execute) - 1]);
                     fs::copy($value, fs::abs("./tmp/$name/$ver/js/" . $execute[count($execute) - 1]));
+                } elseif ($extension[count($extension) - 1] == 'php') {
+                    if (!fs::isDir("./tmp/$name/$ver/php/")) {
+                        mkdir("./tmp/$name/$ver/php");
+                    }
+                    $execute = explode("/", $value);
+                    array_push($php, explode(".", $execute[count($execute) - 1])[0]);
+                    fs::copy($value, fs::abs("./tmp/$name/$ver/php/" . explode(".", $execute[count($execute) - 1])[0]));
                 }
             }
             Json::toFile("./tmp/$name.json", [
                 'url' => $url, 
                 'categoria' => $categoria,
                 "version" => ["$ver"],
+                "modules" => $this->php->selected,
                 "$ver" => [
                     "js" => [
                         $js
                     ],
                     "css" => [
                         $css
+                    ],
+                    "php" => [
+                        $php
                     ]
                 ]
             ]);

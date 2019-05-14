@@ -6,18 +6,10 @@
     "singleton": false
   },
   "components": {
-    "downloaderAlt": {
-      "type": "bundle\\http\\HttpDownloader",
-      "x": 320,
-      "y": 480,
-      "props": {
-        "threadCount": 256
-      }
-    },
     "downloader": {
       "type": "bundle\\http\\HttpDownloader",
       "x": 208,
-      "y": 464,
+      "y": 384,
       "props": {
         "threadCount": 256
       }
@@ -34,6 +26,22 @@
         "followRedirects": "1",
         "proxyType": "DIRECT",
         "userAgent": "Simple Bot v1.0"
+      }
+    },
+    "downloader3": {
+      "type": "bundle\\http\\HttpDownloader",
+      "x": 304,
+      "y": 320,
+      "props": {
+        "threadCount": 256
+      }
+    },
+    "downloaderAlt": {
+      "type": "bundle\\http\\HttpDownloader",
+      "x": 208,
+      "y": 256,
+      "props": {
+        "threadCount": 256
       }
     }
   }

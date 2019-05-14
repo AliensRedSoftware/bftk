@@ -91,12 +91,13 @@ class mysql {
          $MainForm->libphp->text = $this->ini->get('libphp', $MainForm->themes->selected);
          $MainForm->js->text = $this->ini->get('js', $MainForm->themes->selected);
          $MainForm->css->text = $this->ini->get('css', $MainForm->themes->selected);
+         $MainForm->modules->text = $this->ini->get('modules', $MainForm->themes->selected);
      }
      
     /**
      * Создать новую тему
      */
-    public function createtheme ($name, $execute, $libphp, $description, $tag, $js, $css) {
+    public function createtheme ($name, $execute, $libphp, $description, $tag, $js, $css, $modules) {
         if (trim($js) == null) {
             $js = 'js';
         }        
@@ -105,6 +106,9 @@ class mysql {
         }
         if (trim($libphp) == null) {
             $libphp = 'page';
+        }
+        if (trim($modules) == null) {
+            $modules = 'modules';
         }
         if (trim($name->text) == null) {
             $name->text = null;
@@ -125,6 +129,7 @@ class mysql {
             mkdir($name->text . fs::separator() . $libphp);
             mkdir($name->text . fs::separator() . $js);
             mkdir($name->text . fs::separator() . $css);
+            mkdir($name->text . fs::separator() . $modules);
             if (trim($execute) == null) {
                 $execute = $name->text;
             }
@@ -132,7 +137,7 @@ class mysql {
             $this->cheadlib($name->text, $libphp, $description, $tag);
             $this->cbody($name->text, $libphp);
             $this->cfooter($name->text, $libphp);
-            $this->setoptions(false, $name->text, $execute, $libphp, $css, $js);
+            $this->setoptions(false, $name->text, $execute, $libphp, $css, $js, $modules);
             Dialog::alert("Успешно создалась тема! => $name->text");
             app()->form(createnewtheme)->hide();
         }
@@ -209,7 +214,7 @@ class footer extends xlib {
     /**
      * Установить настройки 
      */
-    public function setoptions ($log, $theme, $execute, $libphp, $css, $js) {
+    public function setoptions ($log, $theme, $execute, $libphp, $css, $js, $modules) {
         $this->ini->set('theme', $theme, 'options');
         $this->ini->put([
             'log' => $log,
@@ -217,7 +222,8 @@ class footer extends xlib {
             'execute' => $execute,
             'libphp' => $libphp,
             'css' => $css,
-            'js' => $js
+            'js' => $js,
+            'modules' => $modules
         ], $theme);
         if ($log == true) {
             $log = 'true';
@@ -267,5 +273,12 @@ class options {
      */
     public function getPath_js() {
         return $this->ini->get('js', $this->getTheme());
+    }
+    
+    /**
+     * Возвращает путь к modules
+     */
+    public function getPath_modules() {
+        return $this->ini->get('modules', $this->getTheme());
     }
 }
