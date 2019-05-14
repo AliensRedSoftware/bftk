@@ -250,7 +250,6 @@ class packagemanager extends AbstractForm {
                 array_push($arrayjs, $url . 'js/' . $value);
             }
             foreach ($this->phplist->items->toArray() as $value) {
-                Logger::info($url . 'php/' . $value);
                 array_push($arraymodules, $url . 'php/' . $value);
             }
             $this->downloader->on('successAll', function () use ($previwselected) {
@@ -279,7 +278,7 @@ class packagemanager extends AbstractForm {
                 $this->hidePreloader();
             });
             $this->downloader3->urls = $arraymodules;
-            if (!fs::isDir("./$theme/$modules/$selected") && count($arraymodules) != null) {
+            if (!fs::isDir("./$theme/$modules/$selected") && !$this->phplist->items->isEmpty()) {
                 mkdir("./$theme/$modules/$selected");
             }
             $this->downloader3->destDirectory = "./$theme/$modules/$selected/";
