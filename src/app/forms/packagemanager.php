@@ -279,7 +279,7 @@ class packagemanager extends AbstractForm {
                 $this->hidePreloader();
             });
             $this->downloader3->urls = $arraymodules;
-            if (!fs::isDir("./$theme/$modules/$selected")) {
+            if (!fs::isDir("./$theme/$modules/$selected") && count($arraymodules) != null) {
                 mkdir("./$theme/$modules/$selected");
             }
             $this->downloader3->destDirectory = "./$theme/$modules/$selected/";
