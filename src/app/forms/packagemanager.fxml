@@ -55,8 +55,12 @@
     <Data cursor="DEFAULT" enabled="1" id="data-panelAlt" visible="1"/>
     <Panel AnchorPane.bottomAnchor="72" AnchorPane.leftAnchor="184" AnchorPane.rightAnchor="176" AnchorPane.topAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel3" layoutX="184" layoutY="8" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="400" prefWidth="280" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children>
-        <WebView AnchorPane.bottomAnchor="7" AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" AnchorPane.topAnchor="7" focusTraversable="true" id="browser" layoutX="8" layoutY="8" prefHeight="384" prefWidth="424"/>
-        <Data cursor="DEFAULT" enabled="1" id="data-browser" visible="1"/>
+        <TextArea AnchorPane.bottomAnchor="7" AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" AnchorPane.topAnchor="7" editable="false" focusTraversable="true" id="textArea" layoutX="8" layoutY="8" prefColumnCount="40" prefHeight="384" prefWidth="264" promptText="Код превью..." styleClass="text-input text-area " text="" wrapText="false">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </TextArea>
+        <Data cursor="DEFAULT" enabled="1" id="data-textArea" visible="1"/>
       </children>
       <titleFont>
         <Font name="System Regular" size="13"/>

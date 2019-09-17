@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.paint.*?><?import javafx.scene.web.*?><?import javafx.geometry.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="352" prefWidth="320" styleClass="">
+<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.paint.*?><?import javafx.scene.web.*?><?import javafx.geometry.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="328" prefWidth="328" styleClass="">
   <children>
-    <Panel AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panelAlt" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="352" prefWidth="320" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+    <Panel AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panelAlt" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="328" prefWidth="328" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children/>
       <titleFont>
         <Font name="System Regular" size="13"/>
       </titleFont>
     </Panel>
-    <Panel AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="6" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel" layoutX="8" layoutY="8" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="336" prefWidth="306" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+    <Panel AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="7" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel" layoutX="8" layoutY="8" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="312" prefWidth="313" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children>
-        <ImageViewEx AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="9" autoSize="false" centered="true" focusTraversable="false" height="120" id="image" layoutX="8" layoutY="8" mosaic="false" mosaicGap="0" proportional="true" stretch="true" styleClass="" textFill="#000000" width="288">
+        <ImageViewEx AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="9" autoSize="false" centered="true" focusTraversable="false" height="120" id="image" layoutX="8" layoutY="8" mosaic="false" mosaicGap="0" proportional="true" stretch="true" styleClass="" textFill="#000000" width="295">
           <font>
             <Font name="System Regular" size="12"/>
           </font>
         </ImageViewEx>
-        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="9" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="ip" layoutX="8" layoutY="136" prefColumnCount="12" prefHeight="32" prefWidth="288" promptText="Ip адрес сервера mysql" styleClass="text-input text-field " text="">
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="9" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="ip" layoutX="8" layoutY="136" prefColumnCount="12" prefHeight="24" prefWidth="288" promptText="Ip адрес сервера mysql" styleClass="text-input text-field " text="">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-ip" tooltipText="Ip адрес сервера mysql" visible="1"/>
-        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="9" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="user" layoutX="8" layoutY="176" prefColumnCount="12" prefHeight="32" prefWidth="288" promptText="Имя пользователя mysql" styleClass="text-input text-field " text="">
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="9" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="user" layoutX="8" layoutY="168" prefColumnCount="12" prefHeight="24" prefWidth="288" promptText="Имя пользователя mysql" styleClass="text-input text-field " text="">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-user" tooltipText="Имя пользователя mysql" visible="1"/>
-        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="9" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="password" layoutX="8" layoutY="216" prefColumnCount="12" prefHeight="32" prefWidth="288" promptText="Пароль пользователя mysql" styleClass="text-input text-field " text="">
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="9" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="password" layoutX="8" layoutY="200" prefColumnCount="12" prefHeight="24" prefWidth="288" promptText="Пароль пользователя mysql" styleClass="text-input text-field " text="">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-password" tooltipText="Пароль пользователя mysql" visible="1"/>
-        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="9" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="database" layoutX="8" layoutY="256" prefColumnCount="12" prefHeight="32" prefWidth="288" promptText="Название базы данных mysql" styleClass="text-input text-field " text="">
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="9" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="database" layoutX="8" layoutY="232" prefColumnCount="12" prefHeight="16" prefWidth="288" promptText="Название базы данных mysql" styleClass="text-input text-field " text="">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-database" tooltipText="Название базы данных mysql" visible="1"/>
         <Data cursor="DEFAULT" enabled="1" id="data-image" image=".data/img/mysql.png" visible="1"/>
-        <Button AnchorPane.rightAnchor="9" alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="applymysql" layoutX="128" layoutY="296" prefHeight="34" prefWidth="168" styleClass="button " text="Принять изменение" textAlignment="CENTER" underline="false" wrapText="false">
+        <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="applymysql" layoutX="8" layoutY="264" prefHeight="40" prefWidth="40" styleClass="button " text="Принять изменение" textAlignment="CENTER" underline="false" wrapText="false">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </Button>
-        <Data cursor="DEFAULT" enabled="1" graphic=".data/img/gtk_apply3.png" id="data-applymysql" tooltipText="Применить изменение mysql" visible="1"/>
+        <Data cursor="DEFAULT" enabled="1" graphic=".data/img/okay.png" id="data-applymysql" tooltipText="Применить изменение mysql" visible="1"/>
       </children>
       <titleFont>
         <Font name="System Regular" size="13"/>

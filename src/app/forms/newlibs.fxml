@@ -72,7 +72,7 @@
       </titleFont>
     </Panel>
     <Data cursor="DEFAULT" enabled="1" id="data-panel" visible="1"/>
-    <Button AnchorPane.bottomAnchor="12" AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="send" layoutX="8" layoutY="432" prefHeight="34" prefWidth="296" styleClass="button success " text="Выполнить" textAlignment="CENTER" underline="false" wrapText="false">
+    <Button AnchorPane.bottomAnchor="12" AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="send" layoutX="8" layoutY="434" prefHeight="34" prefWidth="296" styleClass="button success " text="Выполнить" textAlignment="CENTER" underline="false" wrapText="false">
       <font>
         <Font name="System Regular" size="13"/>
       </font>

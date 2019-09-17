@@ -60,13 +60,15 @@ class storeModule extends AbstractModule {
      */
     public function getInstalled(array $csslist, array $jslist, array $moduleslist) {
         $MainModule = new MainModule();
+        $form = app()->getForm(MainForm);
         $theme = $MainModule->getTheme();
         $css = $MainModule->getPath_css();
         $js = $MainModule->getPath_js();
         $modules = $MainModule->getPath_modules();
-        $csscurrent = fs::scan("./$theme/$css", ['extensions' => ['css'], 'excludeDirs' => true]);
-        $jscurrent = fs::scan("./$theme/$js", ['extensions' => ['js'], 'excludeDirs' => true]);
-        $modulescurrent = fs::scan("./$theme/$modules", ['extensions' => ['php'], 'excludeDirs' => true]);
+        $platform = $form->platform->selected;
+        $csscurrent = fs::scan("./$theme/$platform/$css", ['extensions' => ['css'], 'excludeDirs' => true]);
+        $jscurrent = fs::scan("./$theme/$platform/$js", ['extensions' => ['js'], 'excludeDirs' => true]);
+        $modulescurrent = fs::scan("./$theme/$platform/$modules", ['extensions' => ['php'], 'excludeDirs' => true]);
         $accesscss = 0;
         $accessjs = 0;
         $accessmodules = 0;

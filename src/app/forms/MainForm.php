@@ -15,16 +15,6 @@ class MainForm extends AbstractForm {
     }
 
     /**
-     * @event applysettings.action 
-     */
-    function doApplysettingsAction(UXEvent $e = null) {
-        if ($this->ini->get('execute', $this->themes->selected) != $this->execute->text) {
-            rename($this->themes->selected . fs::separator() . 'uri' . fs::separator() . $this->ini->get('execute', $this->themes->selected) .  '.php', $this->themes->selected . fs::separator() . 'uri' . fs::separator() . $this->execute->text . '.php');
-        }
-        $this->setoptions($this->logserver->selected, $this->themes->selected, $this->execute->text, $this->libphp->text, $this->css->text, $this->js->text, $this->modules->text);
-    }
-
-    /**
      * @event show 
      */
     function doShow(UXWindowEvent $e = null) {
@@ -63,6 +53,26 @@ class MainForm extends AbstractForm {
         $this->showPreloader('Ожидание формы...');    
         $this->form('packagemanager')->showAndWait();
         $this->hidePreloader();
+    }
 
+    /**
+     * @event buttonAlt.action 
+     */
+    function doButtonAltAction(UXEvent $e = null) {    
+        if ($this->ini->get('execute', $this->themes->selected) != $this->execute->text) {
+            if(is_file($this->themes->selected . fs::separator() . 'uri' . fs::separator() . $this->execute->text . '.php')) {
+                Dialog::error('Такая страница уже есть придумайте что-то новое!');
+            } else {
+                rename($this->themes->selected . fs::separator() . fs::separator() . 'uri' . fs::separator() . $this->ini->get('execute', $this->themes->selected) .  '.php', $this->themes->selected . fs::separator() . 'uri' . fs::separator() . $this->execute->text . '.php');
+            }
+        }
+        if ($this->ini->get('modules', $this->themes->selected) != $this->modules->text) {
+            if (is_dir($this->themes->selected . fs::separator() . $this->platform->selected . fs::separator() . $this->modules->text)) {
+                Dialog::error('Такая папка уже есть придумайте что-то новое!');
+            } else {
+                fs::move($this->themes->selected . fs::separator() . $this->platform->selected . fs::separator() . $this->ini->get('modules', $this->themes->selected), $this->themes->selected . fs::separator() . $this->platform->selected . fs::separator() . $this->modules->text);
+            }
+        }
+        $this->setoptions($this->logserver->selected, $this->themes->selected, $this->execute->text, $this->platform->selected, $this->libphp->text, $this->css->text, $this->js->text, $this->modules->text);
     }
 }

@@ -46,13 +46,6 @@ class packagemanager extends AbstractForm {
             $this->version->enabled = true;
             $this->version->selectedIndex = 0;
             $this->hidePreloader();
-            if (trim($url) == null) {
-                $this->toast("Я не смогла загрузить сайт с проектом :(");
-                $this->hidePreloader();
-                return ;
-            } else {
-                $this->browser->engine->load($url);
-            }
         });
     }
 
@@ -135,29 +128,6 @@ class packagemanager extends AbstractForm {
     }
 
     /**
-     * @event browser.load 
-     */
-    function doBrowserLoad(UXEvent $e = null) {    
-        $this->toast("Я смогла загрузить сайт с проектом :)");
-        $this->hidePreloader();
-    }
-
-    /**
-     * @event browser.fail 
-     */
-    function doBrowserFail(UXEvent $e = null) {
-        $this->toast("Я не смогла загрузить сайт с проектом :(");
-        $this->hidePreloader();
-    }
-
-    /**
-     * @event browser.running 
-     */
-    function doBrowserRunning(UXEvent $e = null) {    
-        $this->showPreloader('Обработка сайта пожалуйста подождите...');
-    }
-
-    /**
      * @event version.action 
      */
     function doVersionAction(UXEvent $e = null) {
@@ -217,12 +187,13 @@ class packagemanager extends AbstractForm {
         $ver = $this->version->selected;
         $previwselected = $this->listView->selectedIndex;
         $selected = $this->listView->selectedItem;
+        $platform = app()->getForm(MainForm)->platform->selected;
         $url = "https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/zip/$categoria/$name/$ver/";
         if ($e->sender->tooltipText == 'Удалить') {
             if (uiConfirm("Вы точно хотите удалить это ?)")) {
-                $pathcss = "./$theme/$css/";
-                $pathjs = "./$theme/$js/";
-                $pathphp = "./$theme/$modules/$selected/";
+                $pathcss = "./$theme/$platform/$css/";
+                $pathjs = "./$theme/$platform/$js/";
+                $pathphp = "./$theme/$platform/$modules/$selected/";
                 foreach ($this->csslist->items->toArray() as $value) {
                     fs::delete($pathcss . $value);
                 }
@@ -231,7 +202,7 @@ class packagemanager extends AbstractForm {
                 }
                 foreach ($this->phplist->items->toArray() as $value) {
                     fs::clean($pathphp);
-                    fs::delete("./$theme/$modules/" . explode('.', $value)[0]);
+                    fs::delete("./$theme/$platform/$modules/" . explode('.', $value)[0]);
                 }
                 $this->listView->selectedIndex = -1;
                 $this->toast('Успешно удалилось');
@@ -259,7 +230,7 @@ class packagemanager extends AbstractForm {
                 
             });
             $this->downloader->urls = $arraycss;
-            $this->downloader->destDirectory = "./$theme/$css/";
+            $this->downloader->destDirectory = "./$theme/$platform/$css/";
             $this->downloader->start();
             //
             $this->downloaderAlt->on('successAll', function () use ($previwselected) {
@@ -268,20 +239,20 @@ class packagemanager extends AbstractForm {
                 $this->hidePreloader();
             });
             $this->downloaderAlt->urls = $arrayjs;
-            $this->downloaderAlt->destDirectory = "./$theme/$js/";
+            $this->downloaderAlt->destDirectory = "./$theme/$platform/$js/";
             $this->downloaderAlt->start();
             //
-            $this->downloader3->on('successAll', function () use ($previwselected, $theme, $modules, $selected) {
+            $this->downloader3->on('successAll', function () use ($previwselected, $theme, $modules, $selected, $platform) {
                 $this->toast('Успешно устанавилась => modules');
-                fs::rename("./$theme/$modules/$selected/$selected", $selected . ".php");
+                fs::rename("./$theme/$platform/$modules/$selected/$selected", $selected . ".php");
                 $this->listView->selectedIndex = $previwselected;
                 $this->hidePreloader();
             });
             $this->downloader3->urls = $arraymodules;
-            if (!fs::isDir("./$theme/$modules/$selected") && !$this->phplist->items->isEmpty()) {
-                mkdir("./$theme/$modules/$selected");
+            if (!fs::isDir("./$theme/$platform/$modules/$selected") && !$this->phplist->items->isEmpty()) {
+                mkdir("./$theme/$platform/$modules/$selected");
             }
-            $this->downloader3->destDirectory = "./$theme/$modules/$selected/";
+            $this->downloader3->destDirectory = "./$theme/$platform/$modules/$selected/";
             $this->downloader3->start();
         }
     }
@@ -353,5 +324,26 @@ class packagemanager extends AbstractForm {
                 $this->hidePreloader();
             });
         }
+    }
+
+    /**
+     * @event phplist.action 
+     */
+    function doPhplistAction(UXEvent $e = null) {
+        if ($e->sender->selectedIndex == -1) {
+            $this->textArea->clear();
+            return ;
+        }
+        $categoria = $this->categoria->selected;
+        $name = $this->listView->selectedItem;
+        $ver = $this->version->selected;
+        $selected = $e->sender->selectedItem;
+        $request = "https://dsafkjdasfkjnasgfjkasfbg.000webhostapp.com/manager/zip/$categoria/$name/$ver/php/$selected";
+        $this->showPreloader('Обработка кодов пожалуйста подождите...');
+        $this->httpClient->getAsync($request, [], function ($data) {
+            $this->textArea->text = $data->body();
+            $this->hidePreloader();
+        });
+        
     }
 }

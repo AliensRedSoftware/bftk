@@ -5,21 +5,6 @@ use std, gui, framework, app;
 
 class createnewtheme extends AbstractForm {
 
-    /**
-     * @event createnewtheme.action 
-     */
-    function doCreatenewthemeAction(UXEvent $e = null) {    
-        $this->createtheme(
-            $this->name, 
-            $this->firstpage->text, 
-            $this->libphp->text,
-            $this->description->text, 
-            $this->tag->text,
-            $this->css->text,
-            $this->js->text,
-            $this->modules->text
-        );
-    }
 
     /**
      * @event typetheme.construct 
@@ -32,5 +17,21 @@ class createnewtheme extends AbstractForm {
         $this->typetheme->add($radio);
         $radio->x += 8;
         $radio->y += 8;
+    }
+
+    /**
+     * @event createnewtheme.action 
+     */
+    function doCreatenewthemeAction(UXEvent $e = null) {
+        $this->createtheme(
+            $this->name, 
+            $this->firstpage->text, 
+            $this->libphp->text,
+            $this->description->text, 
+            $this->tag->text,
+            $this->css->text,
+            $this->js->text,
+            $this->modules->text
+        );
     }
 }

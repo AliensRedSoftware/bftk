@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.paint.*?><?import javafx.scene.web.*?><?import javafx.geometry.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336" prefWidth="344" styleClass="">
+<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.paint.*?><?import javafx.scene.web.*?><?import javafx.geometry.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="328" prefWidth="344" styleClass="">
   <children>
-    <Panel AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel3" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="336" prefWidth="344" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+    <Panel AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel3" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="328" prefWidth="344" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children/>
       <titleFont>
         <Font name="System Regular" size="13"/>
       </titleFont>
     </Panel>
-    <Panel AnchorPane.leftAnchor="80" AnchorPane.rightAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel" layoutX="80" layoutY="8" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="320" prefWidth="256" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+    <Panel AnchorPane.leftAnchor="80" AnchorPane.rightAnchor="8" backgroundColor="#ffffff" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="panel" layoutX="80" layoutY="8" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="312" prefWidth="256" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children>
         <ComboBox AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" editable="false" focusTraversable="true" id="themes" layoutX="8" layoutY="8" prefHeight="25" prefWidth="304" promptText="" styleClass="combo-box-base combo-box " value="" visibleRowCount="10">
           <items xmlns:fx="http://javafx.com/fxml">
@@ -15,48 +15,58 @@
           </items>
         </ComboBox>
         <Data cursor="DEFAULT" enabled="1" id="data-themes" tooltipText="Тема" visible="1"/>
-        <CheckBox alignment="CENTER_LEFT" contentDisplay="TEXT_ONLY" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="logserver" layoutX="8" layoutY="240" prefHeight="24" prefWidth="160" styleClass="check-box " text="Логирование сервера" textAlignment="LEFT" underline="false" wrapText="false">
+        <CheckBox alignment="CENTER_LEFT" contentDisplay="TEXT_ONLY" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="logserver" layoutX="8" layoutY="232" prefHeight="24" prefWidth="160" styleClass="check-box " text="Логирование сервера" textAlignment="LEFT" underline="false" wrapText="false">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </CheckBox>
         <Data cursor="DEFAULT" enabled="1" id="data-logserver" visible="1"/>
-        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="execute" layoutX="8" layoutY="40" prefColumnCount="12" prefHeight="32" prefWidth="240" promptText="execute" styleClass="text-input text-field " text="">
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="execute" layoutX="8" layoutY="72" prefColumnCount="12" prefHeight="24" prefWidth="240" promptText="execute" styleClass="text-input text-field " text="">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-execute" visible="1"/>
-        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="libphp" layoutX="8" layoutY="80" prefColumnCount="12" prefHeight="32" prefWidth="240" promptText="libphp" styleClass="text-input text-field " text="">
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="libphp" layoutX="8" layoutY="104" prefColumnCount="12" prefHeight="24" prefWidth="240" promptText="libphp" styleClass="text-input text-field " text="">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-libphp" visible="1"/>
-        <Button AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="applysettings" layoutX="8" layoutY="272" prefHeight="24" prefWidth="240" styleClass="button success " text="Принять изменение&#10;" textAlignment="CENTER" underline="false" wrapText="false">
-          <font>
-            <Font name="System Regular" size="13"/>
-          </font>
-        </Button>
-        <Data cursor="DEFAULT" enabled="1" graphic=".data/img/gtk_apply3.png" id="data-applysettings" visible="1"/>
-        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="css" layoutX="8" layoutY="120" prefColumnCount="12" prefHeight="32" prefWidth="240" promptText="css путь" styleClass="text-input text-field " text="">
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="css" layoutX="8" layoutY="136" prefColumnCount="12" prefHeight="24" prefWidth="240" promptText="css путь" styleClass="text-input text-field " text="">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-css" visible="1"/>
-        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="js" layoutX="8" layoutY="160" prefColumnCount="12" prefHeight="32" prefWidth="240" promptText="js путь" styleClass="text-input text-field " text="">
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="js" layoutX="8" layoutY="168" prefColumnCount="12" prefHeight="24" prefWidth="240" promptText="js путь" styleClass="text-input text-field " text="">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-js" visible="1"/>
-        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="modules" layoutX="8" layoutY="200" prefColumnCount="12" prefHeight="32" prefWidth="240" promptText="modules путь" styleClass="text-input text-field " text="">
+        <TextField AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="modules" layoutX="8" layoutY="200" prefColumnCount="12" prefHeight="24" prefWidth="240" promptText="modules путь" styleClass="text-input text-field " text="">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-modules" visible="1"/>
+        <ComboBox AnchorPane.leftAnchor="7" AnchorPane.rightAnchor="7" editable="false" focusTraversable="true" id="platform" layoutX="8" layoutY="40" prefHeight="25" prefWidth="240" promptText="" styleClass="combo-box-base combo-box " value="" visibleRowCount="10">
+          <items xmlns:fx="http://javafx.com/fxml">
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="linux"/>
+              <String fx:value="android"/>
+              <String fx:value="auto"/>
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Data cursor="DEFAULT" enabled="1" id="data-platform" visible="1"/>
+        <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="buttonAlt" layoutX="8" layoutY="256" prefHeight="44" prefWidth="48" styleClass="button " text="Кнопка" textAlignment="CENTER" underline="false" wrapText="false">
+          <font>
+            <Font name="System Regular" size="13"/>
+          </font>
+        </Button>
+        <Data cursor="DEFAULT" enabled="1" graphic=".data/img/okay.png" id="data-buttonAlt" visible="1"/>
       </children>
       <titleFont>
         <Font name="System Regular" size="13"/>
